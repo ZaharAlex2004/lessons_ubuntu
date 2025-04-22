@@ -15,5 +15,5 @@
 Спочатку клонуйте репозиторій на локальну машину:
 
 ```bash
-git clone <your-repository-url>
-cd <your-project-directory>
+git clone https://github.com/ZaharAlex2004/lessons_ubuntu.git
+cd Pro/l23/docker_project
