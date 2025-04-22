@@ -16,4 +16,4 @@
 
 ```bash
 git clone https://github.com/ZaharAlex2004/lessons_ubuntu.git
-cd Pro/l23
+cd Pro/l23/docker_project
