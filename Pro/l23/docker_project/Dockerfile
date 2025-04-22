@@ -18,6 +18,4 @@ USER ALEX
 
 COPY . /l23
 
-CMD ["python", "docker_project/manage.py", "runserver", "http://localhost:8000"]
-
-RUN pip install --no-cache-dir --root-user-action=ignore -r requirements.txt
+CMD ["python", "docker_project/manage.py", "runserver", "0.0.0.0:8000"]
