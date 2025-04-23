@@ -18,10 +18,12 @@ services:
       sh -c "./wait-for-it.sh db:5432 -- 
              python manage.py makemigrations &&
              python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
              python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/l23
       - media_volume:/l23/docker_project/media
+      - static_volume:/l23/docker_project/staticfiles
     ports:
       - "8000:8000"
     env_file:
@@ -32,3 +34,4 @@ services:
 volumes:
   postgres_data:
   media_volume:
+  static_volume:

@@ -14,8 +14,11 @@ ENV PYTHONUNBUFFERED=1
 
 EXPOSE 8000
 
-USER ALEX
+USER root
 
 COPY . /l23
+
+RUN mkdir -p /l23/docker_project/staticfiles /l23/docker_project/media \
+    && chown -R ALEX:ALEX /l23/docker_project/staticfiles /l23/docker_project/media
 
 CMD ["python", "docker_project/manage.py", "runserver", "0.0.0.0:8000"]
