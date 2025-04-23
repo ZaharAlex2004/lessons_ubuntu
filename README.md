@@ -16,4 +16,16 @@
 
 ```bash
 git clone https://github.com/ZaharAlex2004/lessons_ubuntu.git
+
+Дайлі переходьте до docker_project
+
+```bash
 cd Pro/l23/docker_project
+
+### Starting
+
+Для запуску проєкта введіть команду:
+```bash
+docker-compose up --build
+
+
