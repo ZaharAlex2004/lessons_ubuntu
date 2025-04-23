@@ -24,6 +24,10 @@ git clone https://github.com/ZaharAlex2004/lessons_ubuntu.git
 cd Pro/l23/docker_project
 ```
 
+### Configuring the .env File
+
+Створіть файл .env в корені проекту. Цей файл містить всі конфігурації середовища (паролі, назви бази даних тощо).
+
 ### Starting the Project
 
 Для запуску проєкта виконайте команду:
