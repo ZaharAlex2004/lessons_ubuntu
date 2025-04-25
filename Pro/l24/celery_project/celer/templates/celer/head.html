@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="#" />
+    {% load static %}
+    <link rel="stylesheet"  href="{% static 'celer.css' %}">
+</head>
+<header>
+        <nav role="navigation" id="show_nav" class="nb navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="u1 navbar-nav ml-auto">
+                <li class="li2 nav-item"><a class="a1 nav-link" href="/">Головне</a></li>
+                <li class="li2 nav-item"><a class="a1 nav-link" href="/admin">Адміністратор</a></li>
+                <li class="li2 nav-item"><a class="a1 nav-link" href="/register">Реєстрація</a></li>
+            </ul>
+        </nav>
+</header>
+{% block content %}
+{% endblock %}

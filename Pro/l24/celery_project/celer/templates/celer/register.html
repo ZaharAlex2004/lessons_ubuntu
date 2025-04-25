@@ -1,0 +1,18 @@
+{% include 'celer/linker.html' %}
+<h2 class="jumbotron text-center">Реєстрація</h2>
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="message">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<div class="container mt-5">
+     <form method="POST">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button type="submit">Register</button>
+     </form>
+</div>
+{% include 'celer/scripts.html' %}
