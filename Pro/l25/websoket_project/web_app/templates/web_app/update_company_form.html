@@ -1,0 +1,14 @@
+{% include 'web_app/head.html' %}
+<form method="post" action="{% url 'update_company' company.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Назва:</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{ company.name }}" required>
+    </div>
+    <div class="form-group">
+        <label for="location">Місцезнаходження:</label>
+        <input type="text" class="form-control" id="location" name="location" value="{{ company.location }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Оновити</button>
+</form>
+{% include 'web_app/scripts.html' %}

@@ -1,0 +1,8 @@
+{% include 'web_app/head.html' %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create Company</button>
+</form>
+{% include 'web_app/footer.html' %}
+{% include 'web_app/scripts.html' %}

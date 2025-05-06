@@ -1,0 +1,35 @@
+{% include 'web_app/head.html' %}
+<body>
+    <div>Ласкаво просимо!</div>
+    <textarea id="chat-log" cols="50" rows="20"></textarea>
+    <input id="chat-message-input" type="text" size="100">
+
+    {% include 'web_app/footer.html' %}
+    {% include 'web_app/scripts.html' %}
+
+    <script>
+        const groupName = "test_group"; // Место для динамического названия группы
+        const chatSocket = new WebSocket(
+            'ws://' + window.location.host + '/ws/chat/' + groupName + '/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#chat-log').value += (data.message + '\n');
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector('#chat-message-input').focus();
+        document.querySelector('#chat-message-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // Enter key
+                const messageInputDom = document.querySelector('#chat-message-input');
+                const message = messageInputDom.value;
+                chatSocket.send(JSON.stringify({'message': message}));
+                messageInputDom.value = '';
+            }
+        };
+    </script>
+</body>
