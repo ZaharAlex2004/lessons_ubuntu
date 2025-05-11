@@ -1,6 +1,7 @@
 from sqlalchemy import Table, Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
-from db import metadata
+from app.database import metadata
+from pydantic import BaseModel
+from sqlalchemy.ext.declarative import declarative_base
 
 users = Table(
     "users",

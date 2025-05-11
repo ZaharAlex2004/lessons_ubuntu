@@ -21,4 +21,8 @@ class Post(BaseModel):
     user_id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+class AccountCreate(BaseModel):
+    username: str
+    email: str
